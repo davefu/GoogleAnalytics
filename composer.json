@@ -1,14 +1,15 @@
 {
 	"name": "davefu/google-analytics",
 	"type": "library",
-	"description": "Component for ",
-	"keywords": ["nette", "google analztics"],
+	"description": "Component for Google Analytics code",
+	"keywords": ["nette", "google analytics"],
 	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
 	"authors": [
 	{
 		"name": "David Fiedor"
 	}
 	],
+	"minimum-stability": "dev",
 	"require": {
 		"nette/nette": "2.0.*"
 	},
