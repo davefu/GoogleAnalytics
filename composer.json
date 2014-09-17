@@ -1,0 +1,20 @@
+{
+	"name": "davefu/google-analytics",
+	"type": "library",
+	"description": "Component for ",
+	"keywords": ["nette", "google analztics"],
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+	{
+		"name": "David Fiedor"
+	}
+	],
+	"require": {
+		"nette/nette": "2.0.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"davefu\\GoogleAnalytics": "src/"
+		}
+	}	
+}
