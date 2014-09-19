@@ -11,7 +11,7 @@
 	],
 	"minimum-stability": "dev",
 	"require": {
-		"nette/nette": "2.0.*"
+		"nette/nette": "2.1.*"
 	},
 	"autoload": {
 		"psr-0": {

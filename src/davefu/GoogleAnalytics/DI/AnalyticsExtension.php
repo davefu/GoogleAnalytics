@@ -2,7 +2,7 @@
 
 namespace davefu\GoogleAnalytics\DI;
 
-use Nette\Config\CompilerExtension;
+use Nette\DI\CompilerExtension;
 
 /**
  * @author David Fiedor <davefu@seznam.cz>
@@ -18,8 +18,12 @@ class AnalyticsExtension extends CompilerExtension {
 		$builder = $this->getContainerBuilder();
 		$config = $this->getConfig($this->defaults);
 		
-		$builder->addDefinition($this->prefix('googleAnalyticsFactory'))
-					->setClass('davefu\GoogleAnalytics\Components\GoogleAnalyticsFactory')
+		$factory = $builder->addDefinition($this->prefix('googleAnalyticsFactory'))
+					->setImplement('davefu\GoogleAnalytics\Components\GoogleAnalyticsFactory')
 					->setArguments(array($config['key']));
+		
+		$builder->addDefinition($this->prefix('googleAnalytics'))
+					->setClass('davefu\GoogleAnalytics\Components\GoogleAnalytics', array($config['key']))
+					->setFactory($factory);	
 	}
 }
