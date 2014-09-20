@@ -18,12 +18,9 @@ class AnalyticsExtension extends CompilerExtension {
 		$builder = $this->getContainerBuilder();
 		$config = $this->getConfig($this->defaults);
 		
-		$factory = $builder->addDefinition($this->prefix('googleAnalyticsFactory'))
-					->setImplement('davefu\GoogleAnalytics\Components\GoogleAnalyticsFactory')
-					->setArguments(array($config['key']));
-		
 		$builder->addDefinition($this->prefix('googleAnalytics'))
-					->setClass('davefu\GoogleAnalytics\Components\GoogleAnalytics', array($config['key']))
-					->setFactory($factory);	
+					->setImplement('davefu\GoogleAnalytics\Components\GoogleAnalyticsFactory')
+					->setFactory('davefu\GoogleAnalytics\Components\GoogleAnalytics')
+					->setArguments((array($config['key'])));
 	}
 }
