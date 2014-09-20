@@ -13,6 +13,7 @@ class GoogleAnalytics extends Control {
 	protected $googleAnalyticsKey;
 	
 	function __construct($googleAnalyticsKey = null) {
+		parent::__construct();
 		$this->googleAnalyticsKey = $googleAnalyticsKey;
 	}
 
